@@ -16,6 +16,11 @@ import javax.xml.xpath.*;
 
 import org.w3c.dom.*;
 
+import de.kalpatec.pojosr.framework.PojoSR;
+import de.kalpatec.pojosr.framework.launch.ClasspathScanner;
+import de.kalpatec.pojosr.framework.launch.PojoServiceRegistry;
+import de.kalpatec.pojosr.framework.launch.PojoServiceRegistryFactory;
+
 import aQute.bnd.build.*;
 import aQute.bnd.libsync.*;
 import aQute.bnd.maven.*;
