@@ -50,6 +50,8 @@ public class bnd extends Processor {
 		bnd main = new bnd();
 
 		try {
+			startPojoSR();
+			
 			main.run(args);
 			if (bnd.failok)
 				return;
@@ -62,6 +64,13 @@ public class bnd extends Processor {
 				e.printStackTrace();
 		}
 		System.exit(-1);
+	}
+
+	private static PojoServiceRegistry startPojoSR() throws Exception {
+		Map<String, Object> config = new HashMap<String, Object>();
+		
+		config.put(PojoServiceRegistryFactory.BUNDLE_DESCRIPTORS, new ClasspathScanner().scanForBundles());
+		return new PojoSR(config);
 	}
 
 	void run(String[] args) throws Exception {

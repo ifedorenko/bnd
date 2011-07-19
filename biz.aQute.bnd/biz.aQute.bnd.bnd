@@ -4,12 +4,11 @@
 Include-Resource: 				plugin.xml, icons=icons, LICENSE, embedded-repo.jar
 
 Private-Package: 				aQute.bnd.*, aQute.lib.osgi
-Conditional-Package: 			aQute.lib.*, aQute.libg.*
+pojosr-packages:				de.kalpatec.pojosr.*,org.osgi.*,org.apache.felix.*
+Conditional-Package: 			aQute.lib.*, aQute.libg.*,${pojosr-packages}
 Export-Package: 				aQute.bnd.service.*
 Import-Package: 				!org.eclipse.*,org.apache.tools.ant; resolution:=optional, *
 Bundle-ClassPath:				.
 Main-Class: 					aQute.bnd.main.bnd
 Bundle-Version:					${^Bundle-Version}
-
-
-
+Bundle-Activator: aQute.bnd.runtime.Activator
